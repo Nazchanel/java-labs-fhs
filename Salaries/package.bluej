@@ -1,0 +1,25 @@
+#BlueJ package file
+objectbench.height=76
+objectbench.width=938
+package.editor.height=874
+package.editor.width=840
+package.editor.x=-7
+package.editor.y=0
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+project.charset=UTF-8
+target1.editor.height=475
+target1.editor.width=1936
+target1.editor.x=-436
+target1.editor.y=519
+target1.height=50
+target1.name=Salaries
+target1.naviview.expanded=true
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=80
+target1.x=80
+target1.y=10

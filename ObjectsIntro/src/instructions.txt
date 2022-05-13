@@ -1,0 +1,227 @@
+Object oriented programming (OOP) is a programming paradigm (an underlying theory / methodology) designed to manage complexity in modern software (which is incredibly, incredibly complex).
+
+So far, you have been programming in a procedural fashion, where all code is contained in various procedures (methods) that call each other.  Object oriented programming is much different than what you've done so far.  You're going to be very confused for a couple days; this is normal, and will pass.
+
+There is a lot to read in the google slides on the justification, benefits, and syntax of OOP; make sure you read it all as you go, and do your own research on topics you don't understand.  Classes and objects can take some time to fully understand.
+
+You will work through the mini-projects in this assignment in order.  You can put all the classes for this lab in the same BlueJ project.  Your ObjectsIntro project should begin with these classes:
+
+    BankAccount
+    Bicycle
+    Circle
+    DrawingTheLine
+
+When you turn in your work, you can submit multiple .java files for all the classes.  It may be more efficient to submit the .java files as you complete one section of the lab.
+
+Please read and follow the individual mini-projects’ instructions as you will need to create more classes to run or assist the execution of these main classes.  Some of the mini-projects have FAQs for you to reference if something strange occurs.  Use this link for your aides ObjectsIntro Aides .
+
+The short, simple projects in this lab will prepare you to write more meaningful programs using OOP techniques in the future.  Bigger projects are where OOP techniques really shine.
+Class BankAccount
+
+The goal of this section is to create a class that models a bank account.  The BankAccount class is fairly simple – it has two properties: a String variable that stores the account owner's name and a double variable that stores the current account balance.  You cannot create a new bank account without an owner's name or an initial deposit.  These two fields (instance variables) are what describe a BankAccount.
+
+The BankAccount class should have the following:
+
+    Two private instance variables (fields)
+        String owner
+        double balance
+    A constructor that has two parameters: a String o and a double bal. The constructor should initialize the fields to the values of the parameters.  (Don't forget:  We're not allowing a new bank account without an owner's name or balance.  This means we will not have any other constructors.)
+    public void deposit(double amt) -- this mutator method doesn't return anything, and has one double variable parameter. The parameter represents the amount of money that will be added to the account's balance.
+    public void withdraw(double amt) -- this mutator method doesn't return anything, and has a double variable parameter. The parameter represents the amount of money that will be withdrawn from the account's balance.
+    public String getOwner() -- this accessor method will return the owner of the account.
+    public double getBalance() -- this accessor method will return the balance of the account.
+
+Next, create a new class, BankAccountRunner, with a main() method.  Inside the main method, you should create 3 new BankAccount objects (remember, objects are a specific instance of a class).  Initialize the BankAccount objects with whatever names and values you want.
+
+Creating a new object follows this format:
+
+ClassName objectName = new ClassName(<constructor's parameters>);
+
+Using the BankAccount objects you created, complete the following challenges:
+
+1) Using if statements, print the balance of the BankAccount object that has the largest amount of money (based on the values you chose). If you're crafty, you can do this in one line (without if statements).  (NOTE: Don't forget about using an accessor method to retrieve the balance.)
+
+2) Get the value of a double variable called amount from the keyboard. Using the withdraw() method, remove amount from the balance of one account, and print the new balance of that account.
+
+3) Using keyboard input, get the value of a double variable called balance and a String variable called owner. Create a new BankAccount object using the value of these variables as the constructor's parameters, and print its owner and balance (to ensure it worked).
+
+Class Bicycle
+
+Write a class that will model a bicycle.   The Bicycle class has the following:
+
+    Three private instance variables (fields):
+        String color
+        double location (distance from home, in miles)
+        double speed (miles per hour)
+    One constructor that takes a single parameter, a String hue. The constructor should do the following:
+        Set the instance variable color equal to hue.
+
+        Initializes the location to 0. (Or, you could let it default.)
+        Initializes the speed to 0. (Or, you could let it default.)
+    The following public methods:
+        public void setSpeed(double newSpeed)
+
+            This method takes one parameter, a double newSpeed.
+            It sets the instance variable speed to newSpeed.
+            The speed must be greater than or equal to zero.
+        public void increaseSpeed(double deltaSpeed)
+
+            This method takes one parameter, a double deltaSpeed.
+            The bicycle's speed is increased by deltaSpeed, meaning that deltaSpeed is added to its speed.
+            deltaSpeed could be negative which would decrease the speed.  Do not allow speed to be negative if the new speed is less than zero, set speed to zero.
+        public double travel(double hours)
+
+            This method takes one parameter, a double for hours.
+            This method calculates the number of miles traveled at its current speed for the specified number of hours.
+            This method updates the location by adding the number of miles traveled to its current location.
+            This method returns the number of miles traveled (not its location).
+        public String getColor()
+            This method returns the color of the bicycle.
+        public double getLocation()
+            This method returns the current location of the bicycle.
+        public double getSpeed()
+            This method returns the current speed of the bicycle.
+
+After, you've written your Bicycle class, test it by making the class called BicycleTester:
+
+public class BicycleTester
+{
+    public static void main(String args[])
+    {
+        Bicycle bike = new Bicycle("blue");
+        // make a new blue Bicycle object
+
+        bike.setSpeed(10);
+        System.out.println("Color: " + bike.getColor());
+        System.out.println("Speed: " + bike.getSpeed());
+        System.out.println("Miles traveled: " + bike.travel((double)3/60)); // 3 minutes
+        System.out.println("Location: " + bike.getLocation());
+
+        bike.increaseSpeed(5);
+        System.out.println("Speed: " + bike.getSpeed());
+        System.out.println("Miles traveled: " + bike.travel((double)3/60)); // 3 minutes
+        System.out.println("Location: " + bike.getLocation());
+    }
+}
+
+When you run the main() method of the BicycleTester class, your output should be as follows (if you've done everything correctly):
+
+Color: blue
+Speed: 10.0
+Miles traveled: 0.5
+Location: 0.5
+Speed: 15.0
+Miles traveled: 0.75
+Location: 1.25
+
+Class Circle
+
+The goal of this section is to create a viable Circle class.  The Circle class will model a circle, which is quite simple – it has just one field (instance variable): a double variable that stores the radius of the corresponding circle.  The state of this variable is what describes a particular Circle (a Circle object).  Class declaration:
+
+public class Circle
+{
+     private double radius; //instance variable
+}
+
+A class is a blueprint for objects, and in order to make objects, your class needs a constructor!  The constructor should set the value of the radius field equal to the value of the parameter.  Example:
+
+public Circle(double rad) //constructor
+{
+     radius = rad; //field radius equals value of rad parameter
+}
+
+Your Circle class should have the following methods:
+
+1) public double getDiameter() – this method should return a double, the diameter of the Circle object (using the value of its radius instance variable).
+
+2) public double getArea() – this method should return a double, the area of the Circle object (given the value of its radius instance variable).
+
+3) public double getCircumference() – this method should return a double, the circumference of the Circle object (given the value of its radius instance variable).
+
+When you've completed your Circle class, in a new class called CircleRunner that contains a public static void main(String[] args) method, create 2 Circle objects, each with a different value for radius.  Call the methods on your objects, and note how each object has the all the methods of the class, but will produce different results based on the value of the object's instance variable.  Example:
+
+public class CircleRunner
+{
+     public static void main(String[] args)
+     {
+          Circle circleOne = new Circle(2.0);
+          //create Circle objects
+          Circle circleTwo = new Circle(3.5);
+
+          System.out.println(circleOne.getDiameter());
+          //call the object's methods
+          System.out.println(circleTwo.getArea());
+     }
+}
+
+If you ran the main() method above, you should see the following output:
+
+4.0
+38.48451000647496
+
+Alter your CircleRunner class to run all the methods for your Circle objects to see the differences in output.
+Class DrawingTheLine
+
+A class is a software bundle of variables (fields) and methods.  A class is also a blueprint for objects, which are actual instances of the class (they contain all the variables and the methods defined in the class, and the variables will have actual values).  Bundling variables and methods into a class creates a custom type of thing!
+
+1) Make a new class called Point that will be a bundle of a couple variables and methods, for defining a single point (an X and Y location, like a point on a graph).
+
+a) Private instance variables
+
+            double x – the point's X coordinate
+            double y – the point's Y coordinate
+
+b) Constructor with two parameters, xVal and yVal, that will initialize the PIVs.
+
+c) Methods
+
+            public String toString() – method that returns a String that shows the state of the object, for printing a text version of a Point Copy/paste the following code inside your method:
+
+return "{x: " + x + ", y: " + y + "}";
+
+2) Create a class called Line. This class models a line (a line is simply a connection between two points).  A Line is comprised of two Points, along with a couple methods.
+
+a) Instance variables
+
+            Point firstPoint – first point in the line
+            Point secondPoint – second point in the line
+
+b) Constructors
+
+            public Line(double x1, double y1, double x2, double y2) – initializes the two Point instance variables to new Point objects, given the values of the parameters
+            public Line(Point p1, Point p2) – initializes the two Point instance variables to the value of the parameters
+
+c) Methods
+
+            public double getSlope() – returns the slope of this line. See below for formula.
+
+CodeCogsEqn (1).gif
+
+            public String toString() – method that returns a String that allows a Line to be printed in a useful way. Copy/paste the following code inside your method:
+
+return "<Point one: " + firstPoint.toString() + ", Point two: " + secondPoint.toString() + ">";
+
+3) Create a new class called Runner with a public static void main(String[] args) method and complete the following exercises:
+
+a) Make a Point object called p1, with 23.14 and 4.87 supplied (for x and y) to the constructor.
+
+b) Make a Point object called p2, with 15.2 and 6.87 supplied (for x and y) to the constructor.
+
+c) Make a Line object called line1, with p1 and p2 supplied to the constructor.
+
+d) Make a Line object called line2, with the values 12.45, 8.1, 9.2, and 14.7 supplied to the constructor.
+
+e) Print the line1 object (print a call of toString()).
+
+f) Print the line2 object (print a call of toString()).
+
+g) Print a call to the getSlope() method on the line1 object.
+
+h) Print a call to the getSlope() method on the line2 object.
+
+i) Call the Runner class' main() method; your output should look like the following. Fix any errors you have.
+
+<Point one: {x: 23.14, y: 4.87}, Point two: {x: 15.2, y: 6.87}>
+<Point one: {x: 12.45, y: 8.1}, Point two: {x: 9.2, y: 14.7}>
+line1 slope >>> -0.251889168765743
+line2 slope >>> -2.0307692307692307

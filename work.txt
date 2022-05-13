@@ -1,0 +1,15 @@
+1. A storage device that contains directories
+2. Directory is the same thing as a folder. It is is useful to oragnize your files
+3. Parent directory is the directory that has many other subdirectories inside. A subdirectory is a folder inside a folder
+4. A file is a piece of binary that stores some data 
+5. A file extension ius used to differentiate between two different types of data
+6. It will save to C:\ drive
+7. Yes it will be lost because the C:\ drive is destroyed
+8. A networked drive is a drive that is stored on the cloud, or the internet
+9. The H:\ drive
+10. Yes it will survive because it is not stored on your computer
+11. It will be saved to the H:\ network drive
+12. The Downloads folder
+13. 247 MB
+14. S:\ and H:\
+ 

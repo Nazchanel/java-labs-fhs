@@ -1,0 +1,36 @@
+
+
+5: Test03: Answer: error
+-------------------------------
+When a String is defined it must be in
+quotation marks. Yo was not in 
+quotation marks so the program assumes
+its a variable. This variable doesn't exist
+so it's an error
+
+3: Test03: Answer: error
+-------------------------------
+Assignment operator = is different 
+that comparison operator ==. The
+latter must be used when using 
+if statements. 
+
+4.  Test03: Answer: what?
+-------------------------------
+The && operator requires for the 
+two values to be true. Nothing can
+be true and false so it is false. 
+
+6: Test02: Answer: 0.0
+-------------------------------
+The value of an expression that
+has two integers  would result in 
+0 it gets trucated because its integer 
+division. 
+
+6: Test03: Answer: error
+-------------------------------
+You can't use the ++ operator to 
+add a value to the variable because
+the variable wasnt initialized to any value. 
+
