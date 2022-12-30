@@ -62,6 +62,7 @@ public class Compass {
      */
     public int getHeading()
     {
+
         return heading;
     }
     /* This method translates heading into one of the eight directional values:
